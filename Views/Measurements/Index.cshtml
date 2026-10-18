@@ -1,0 +1,63 @@
+﻿@model opticalPulse.Models.PulseOximeterResult
+
+@{
+    ViewData["Title"] = "Pulse Oximeter";
+}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">
+        Optical Pulse Oximeter
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card p-4 mb-3">
+
+                <h3>Heart Rate</h3>
+
+                @if (Model.HeartRateValid)
+                {
+                    <h1>
+                        @Model.HeartRate bpm
+                    </h1>
+                }
+                else
+                {
+                    <p>
+                        Invalid measurement
+                    </p>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card p-4 mb-3">
+
+                <h3>SpO₂</h3>
+
+                @if (Model.SpO2Valid)
+                {
+                    <h1>
+                        @Model.SpO2 %
+                    </h1>
+                }
+                else
+                {
+                    <p>
+                        Invalid measurement
+                    </p>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
